@@ -1,0 +1,277 @@
+:root {
+  --accent: #2b8cff;
+  --muted: #666;
+  --card: #fff;
+  --bg: #f3f6fb;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+  background-image: url('https://t3.ftcdn.net/jpg/06/23/42/84/360_F_623428436_vTfqtUI6Fy4rINjwEynV8PAX96xVPYZo.jpg');
+  background-size: cover;       /* Fill the screen */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+ /* Accent color with slight transparency */
+  color: black;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  
+ 
+}
+
+.nav-container {
+  max-width: 980px;
+  
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color:black;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color:black;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #ffeb3b;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(43, 140, 255, .15);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(20, 30, 60, .06);
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin: 8px 0 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e3e6ee;
+}
+
+/* Movies */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.movie {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.poster {
+  width: 72px;
+  height: 100px;
+  background: #ddd;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #666;
+}
+
+.movie h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.movie p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Booking */
+.showtimes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.chip {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eefb;
+  background: #fbfdff;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+}
+
+/* Seats */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  max-width: 520px;
+}
+
+.seat {
+  padding: 10px;
+  border-radius: 6px;
+  background: green;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgba(43, 140, 255, .12);
+}
+
+.seat.selected {
+  background:blue;
+  color: #fff;
+}
+
+.seat.occupied {
+  background: red;
+  color: black;
+  cursor: not-allowed;
+}
+
+.legend {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0 18px;
+  align-items: center;
+}
+
+.legend div {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.legend span {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Payment */
+#paymentView {
+  text-align: center;
+  padding: 24px;
+}
+
+.summary {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+small {
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .seat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .poster {
+    width: 55px;
+    height: 78px;
+  }
+}

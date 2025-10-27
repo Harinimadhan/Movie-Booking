@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movie Ticket Demo</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="nav-logo">🎥 Movie Box</h2>
+      <ul class="nav-links">
+        <li><a href="#loginView" id="navLogin">Login</a></li>
+        <li><a href="#moviesView" id="navMovies">Movies</a></li>
+        <li><a href="#bookingView" id="navBook">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div id="userStatus"></div>
+    </header>
+
+    <!-- LOGIN VIEW -->
+    <div id="loginView" class="card" aria-live="polite">
+      <h2>Login</h2>
+      <p><small>Enter any email/password to simulate login.</small></p>
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" value="user@example.com" />
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="password" value="123456" />
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="btn" id="loginBtn">Login</button>
+        <button class="ghost" id="skipBtn">Continue as Guest</button>
+      </div>
+    </div>
+
+    <!-- MOVIES VIEW -->
+    <div id="moviesView" class="card" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2>Now Showing</h2>
+        <button class="ghost" id="logoutBtn">Logout</button>
+      </div>
+      <div class="movies-grid" id="moviesGrid"></div>
+    </div>
+
+    <!-- BOOKING VIEW -->
+    <div id="bookingView" class="card" style="display:none">
+      <button class="ghost" id="backToMovies">&larr; Back to movies</button>
+      <h2 id="selectedMovieTitle">Booking</h2>
+      <p id="movieDesc"></p>
+
+      <label for="showtimeSelect">Choose showtime</label>
+      <div id="showtimes" class="showtimes"></div>
+
+      <label for="ticketCount">Number of tickets</label>
+      <select id="ticketCount">
+        <option value="1">1 ticket</option>
+        <option value="2">2 tickets</option>
+        <option value="3">3 tickets</option>
+        <option value="4">4 tickets</option>
+      </select>
+
+      <div style="margin-top:12px;">
+        <button class="btn" id="chooseSeatsBtn">Choose Seats</button>
+      </div>
+    </div>
+
+    <!-- SEATS VIEW -->
+    <div id="seatsView" class="card" style="display:none">
+      <button class="ghost" id="backToBooking">&larr; Back</button>
+      <h2>Choose Seats</h2>
+      <div class="legend">
+        <div><span style="background:green;border:1px solid green"></span> Available</div>
+        <div><span style="background:blue"></span> Selected</div>
+        <div><span style="background:red"></span> Occupied</div>
+      </div>
+
+      <div id="seatGrid" class="seat-grid" aria-label="Seat selection"></div>
+
+      <div style="margin-top:12px">
+        <p><small>Selected seats: <span id="selectedSeatsText">0</span></small></p>
+        <p><strong>Total: ₹<span id="totalPrice">0</span></strong></p>
+        <button class="btn" id="confirmSeatsBtn">Confirm & Proceed to Payment</button>
+      </div>
+    </div>
+
+    <!-- PAYMENT VIEW -->
+    <div id="paymentView" class="card" style="display:none">
+      <h2>Payment</h2>
+      <p>Simulated payment page. Below is your booking summary.</p>
+      <div class="summary card" id="bookingSummary"></div>
+      <div style="margin-top:12px">
+        <button class="btn" id="finalizeBtn">Simulate Payment</button>
+        <button class="ghost" id="homeBtn">Back to Home</button>
+      </div>
+    </div>
+
+    <footer>
+      Demo — not a production app. Prices are illustrative.
+    </footer>
+  </div>
+
+  <!-- Link JS -->
+  <script src="script.js"></script>
+</body>
+</html>
